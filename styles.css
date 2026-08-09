@@ -1,0 +1,227 @@
+/* -------------------- Global Styles -------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    background-color: grey;
+    color: white;
+    overflow-x: hidden;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    padding-left: 25px;
+    padding-right: 25px;
+    list-style: none;
+    
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+footer {
+    background-color: black;
+    color: gray;
+    font-size: 12px;
+    padding: 20px;
+    text-align: left;
+}
+
+/* -------------------- Fonts -------------------- */
+@font-face {
+    src: url(fonts/BarlowCondensed-Thin.ttf);
+    font-family: barlow;
+}
+@font-face {
+    src: url(fonts/AmaticSC-Regular.ttf);
+    font-family: amatic;
+}
+@font-face {
+    src: url(fonts/Staatliches-Regular.ttf);
+    font-family: staat;
+}
+
+/* -------------------- Header -------------------- */
+header {
+    position: relative;
+    width: auto;
+    min-height: 140vh;
+    background-color: black;
+    background-image: url("images/slika1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    overflow: visible;
+    max-height: 200vh
+    
+    
+    
+}
+
+
+/* -------------------- Logo -------------------- */
+header .logo {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: staat;
+    font-size: clamp(60px, 10vw, 120px); 
+    white-space: nowrap;
+    color: white;
+    z-index: 20;
+    text-align: center;
+    
+    
+}
+
+/* -------------------- Nav Links -------------------- */
+header nav {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+header nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+header nav li a {
+    font-family: barlow;
+    font-size: clamp(34px, 3vw, 44px);
+    font-weight: normal;
+    color: white;
+}
+
+header nav li.logo {
+    /* spacer for center (logo already absolute) */
+}
+
+/* -------------------- Header Content -------------------- */
+.header-content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 250px; /* enough space for logo + nav */
+    box-sizing: border-box;
+    text-align: center;
+    font-size: clamp(34px, 5vw, 30px);
+    color: white;
+
+}
+
+/* -------------------- Bio / middlediv -------------------- */
+.middlediv {
+    max-width: 90%;
+    margin: 5px auto;
+    padding: 5px;
+    background-color: rgba(128, 128, 128, 0.7);
+    font-family: barlow;
+    font-size: clamp(34px, 3vw, 30px);
+    line-height: 1.6;
+    font-weight: 500;
+    text-align: center;
+}
+
+.middlediv h2 {
+    font-size: 44px;
+    margin-bottom: 10px;
+}
+
+.middlediv p {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+/* -------------------- Music / Social Icons -------------------- */
+.centerdiv, .content {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+a.icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+a.icon-link i {
+    font-size: 3em;
+    transition: all 0.3s linear;
+}
+
+a.icon-link:hover i {
+    transform: scale(1.2);
+}
+
+/* HR Styling */
+header hr {
+    width: 70%;
+    border-color: white;
+    opacity: 0.5;
+    margin: 30px 0;
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+    header .logo {
+        font-size: clamp(60px, 12vw, 140px);
+        
+    }
+    header nav li a {
+        font-size: clamp(20px, 4vw, 28px);
+    }
+    .middlediv h2, .middlediv p {
+        font-size: 4vw;
+    }
+    a.icon-link {
+        width: 70px;
+        height: 70px;
+    }
+    a.icon-link i {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 60vh;
+    }
+    header .logo {
+        font-size: clamp(40px, 10vw, 100px);
+    }
+    header nav li a {
+        font-size: clamp(16px, 5vw, 24px);
+    }
+    .middlediv h2, .middlediv p {
+        font-size: 4vw;
+    }
+    a.icon-link {
+        width: 60px;
+        height: 60px;
+    }
+    a.icon-link i {
+        font-size: 2em;
+    }
+}
